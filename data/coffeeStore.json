@@ -1,0 +1,19 @@
+[
+  {
+    "id": 0,
+    "name": "Coffee 1",
+    "imageUrl": "https://images.unsplash.com/photo-1640020580603-e7beafd75d94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+    "websiteUrl": "",
+    "address": "x1 address",
+    "neighbourhood": "A king"
+  },
+
+  {
+    "id": 1,
+    "name": "Coffee 2",
+    "imageUrl": "https://images.unsplash.com/photo-1583435175113-253e893af614?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "websiteUrl": "",
+    "address": "x2 address",
+    "neighbourhood": "A hourse"
+  }
+]

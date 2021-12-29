@@ -1,0 +1,39 @@
+.cardLink {
+  text-decoration: none;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: fit-content;
+  height: 400px;
+  padding: 2rem;
+  margin: 0 0 3rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardHeadingWrapper {
+  padding: 2rem;
+}
+.cardHeading {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.cardImageWrapper {
+  width: 250px;
+  height: 250px;
+  border: 1px solid white;
+  box-sizing: content-box;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.cardImageWrapper:hover {
+  border: 1px solid #0000001a;
+}

@@ -1,0 +1,23 @@
+# POST http://localhost:3000/api/createCoffeeStores
+# content-type: application/json
+
+#  {
+#     "id": "6",
+#     "address": "Sabra Street",
+#     "voting": 100,
+#     "imageUrl": "https://img.com",
+#     "name": "Ahmed",
+#     "neighbourhood": "Mansoura Street St"    
+#  }
+
+
+#  GET http://localhost:3000/api/getCoffeeStoreById?id="4b0056b3f964a520013d22e3"
+
+
+PUT http://localhost:3000/api/updateFavoriteCoffeeStoreById
+ content-type: application/json
+ Accept: application/json
+
+ {
+    "id": "4e2b5d6f315185636a090f0a"
+ }

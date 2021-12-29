@@ -1,0 +1,51 @@
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+.title1 {
+  color: var(--primary-color);
+}
+
+.title2 {
+  color: var(--secondary-color);
+}
+
+.subtitle {
+  font-size: 3rem;
+  margin: 0.5;
+}
+
+.button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  background-color: var(--secondary-color);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+}
+
+@media screen and (min-width: 400px) {
+  /* body {
+    font-size: 3rem;
+  } */
+
+  .title {
+    font-size: 5rem;
+    font-weight: bold;
+  }
+  .title1 {
+    color: var(--primary-color);
+  }
+
+  .title2 {
+    color: var(--secondary-color);
+  }
+
+  .subtitle {
+    font-size: 4rem;
+  }
+}
