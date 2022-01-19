@@ -1,8 +1,7 @@
 .title {
   font-size: 4rem;
   font-weight: bold;
-  margin: 0;
-  padding: 0;
+  margin-bottom: 1rem;
 }
 .title1 {
   color: var(--primary-color);
@@ -14,7 +13,9 @@
 
 .subtitle {
   font-size: 3rem;
-  margin: 0.5;
+  padding: 0 2rem;
+  margin-bottom: 2.2rem;
+  font-weight: 500;
 }
 
 .button {
@@ -23,16 +24,20 @@
   cursor: pointer;
   color: white;
   background-color: var(--secondary-color);
-  padding: 1rem 2rem;
+  padding: 1.2rem 3rem;
   border-radius: 0.5rem;
   width: fit-content;
+  font-size: 1.8rem;
+}
+
+@media screen and (min-width: 600px) {
+  .subtitle {
+    padding: 0;
+    margin-bottom: 5rem;
+  }
 }
 
 @media screen and (min-width: 400px) {
-  /* body {
-    font-size: 3rem;
-  } */
-
   .title {
     font-size: 5rem;
     font-weight: bold;

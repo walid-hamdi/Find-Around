@@ -5,10 +5,10 @@ function Banner({ buttonText, onClick }) {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        <span className={styles.title1}>Coffee</span>
-        <span className={styles.title2}>Shop</span>
+        <span className={styles.title1}>Find</span>
+        <span className={styles.title2}>Around</span>
       </h1>
-      <p className={styles.subtitle}>Discover your local coffee shops!</p>
+      <p className={styles.subtitle}>Discover your local shops!</p>
       <button onClick={onClick} className={styles.button}>
         {buttonText}
       </button>

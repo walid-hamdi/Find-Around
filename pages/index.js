@@ -93,7 +93,6 @@ export default function Home({ coffeeStore }) {
     <div>
       <Head>
         <title>Home | Coffee Shope </title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.container}>
         <div className={styles.banner}>
@@ -103,7 +102,12 @@ export default function Home({ coffeeStore }) {
           />
           {errorMessage && <p>{errorMessage}</p>}
           <div className={styles.hero}>
-            <Image src="/static/hero-image.png" width={700} height={650} />
+            <Image
+              className={styles.img}
+              src="/static/hero-image.png"
+              layout="fill"
+              objectFit="cover"
+            />
           </div>
         </div>
 

@@ -5,6 +5,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <link rel="icon" href="/favicon.ico" />
           <link
             rel="preload"
             href="/fonts/IBMPlexSans-Regular.ttf"
@@ -25,7 +26,7 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body>
-          <Main></Main>
+          <Main />
           <NextScript />
         </body>
       </Html>
