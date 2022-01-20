@@ -16,8 +16,8 @@ export default function Card({ heading, imageUrl, href }) {
             <Image
               className={styles.cardImage}
               src={imageUrl}
-              width="250"
-              height="250"
+              layout="fill"
+              objectFit="cover"
             />
           </div>
         </div>

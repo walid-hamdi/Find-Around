@@ -19,7 +19,6 @@ export default function Home({ coffeeStore }) {
   useEffect(async () => {
     if (lat_long) {
       try {
-        // const stores = await fetchCoffeeStores(latlong, 30);
         const response = await fetch(
           `/api/getCoffeeStoreByLocation?latLong=${lat_long}&limit=${20}`
         );
@@ -66,7 +65,7 @@ export default function Home({ coffeeStore }) {
         </div>
 
         {stores.length > 0 && (
-          <h1 className={styles.heading2}>Toronto Stores</h1>
+          <h1 className={styles.heading2}>New York Stores</h1>
         )}
         <div className={styles.cardLayout}>
           {stores &&
@@ -92,12 +91,12 @@ export default function Home({ coffeeStore }) {
   return (
     <div>
       <Head>
-        <title>Home | Coffee Shope </title>
+        <title>Home | Find Around </title>
       </Head>
       <main className={styles.container}>
         <div className={styles.banner}>
           <Banner
-            buttonText={isFindingLoading ? "Loading..." : "Find Nearby"}
+            buttonText={isFindingLoading ? "Loading..." : "Find Coffee Shops"}
             onClick={handleOnClick}
           />
           {errorMessage && <p>{errorMessage}</p>}

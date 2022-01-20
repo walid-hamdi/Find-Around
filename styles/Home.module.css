@@ -2,18 +2,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4rem;
+  margin: 6rem 0;
   text-align: center;
 }
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 4rem;
 }
 
 .heading2 {
   font-size: 3rem;
   color: white;
+  text-align: center;
 }
 
 .hero {
@@ -45,6 +46,7 @@
     flex-direction: row;
     text-align: left;
     justify-content: space-around;
+    margin-bottom: 100px;
   }
 
   .hero {
@@ -56,6 +58,11 @@
     overflow: hidden;
     opacity: 0.8;
     margin-top: 2rem;
+  }
+
+  .heading2 {
+    text-align: left;
+    padding: 0 2rem 2rem 1rem;
   }
 }
 @media screen and (min-width: 768px) {
