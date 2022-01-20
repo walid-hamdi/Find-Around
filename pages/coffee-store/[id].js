@@ -8,6 +8,8 @@ import { fetchCoffeeStores } from "../../lib/coffee-shop";
 import { StoreContext } from "../../store/coffee-stores";
 import { isEmpty } from "../../utils";
 import useSWR from "swr";
+import styles from "../../styles/detail.module.css";
+import cs from "classnames";
 
 function CoffeeStore(initialProps) {
   const route = useRouter();
@@ -103,34 +105,58 @@ function CoffeeStore(initialProps) {
   }
 
   return (
-    <div>
+    <>
       <Head>
         <title>{name && name}</title>
       </Head>
 
-      <Link href="/">
-        <a>Back to home</a>
-      </Link>
-      <div>
-        <h1>{name && name}</h1>
-        <Image
-          src={
-            imgUrl ||
-            "https://images.unsplash.com/photo-1640020580603-e7beafd75d94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"
-          }
-          width={300}
-          height={200}
-          objectFit="fill"
-        />
-        <h1>{location && location.address}</h1>
-        <h1>{address && address}</h1>
+      <div className={styles.container}>
+        <div className={styles.backWrapper}>
+          <Link href="/">
+            <a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="48px"
+                viewBox="0 0 24 24"
+                width="48px"
+                fill="#fff"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z" />
+              </svg>
+            </a>
+          </Link>
+        </div>
+        <div className={styles.itemWrapper}>
+          <div className={cs([styles.itemWrapperCard, "glass"])}>
+            <h1 className={styles.mainTitle}>{name && name}</h1>
+            <div className={styles.imgWrapper}>
+              <Image
+                src={
+                  imgUrl ||
+                  "https://images.unsplash.com/photo-1640020580603-e7beafd75d94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"
+                }
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          </div>
+          <div className={cs([styles.content, "glass"])}>
+            <h1>{location && location.address}</h1>
+            <h1>{address && address}</h1>
 
-        <h1>{neighborhood && neighborhood}</h1>
-        <p>{voting}</p>
+            <h1>{neighborhood && neighborhood}</h1>
+            <div className={styles.voteWrapper}>
+              <p className={styles.voteText}>{voting}</p>
+            </div>
 
-        <button onClick={handleUpVote}>Up Vote</button>
+            <button className={styles.upVoteButton} onClick={handleUpVote}>
+              Up Vote
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
