@@ -6,7 +6,7 @@ import {
 
 const createCoffeeStores = async (req, res) => {
   try {
-    const { id, neighbourhood, address, voting, imgUrl, name } = req.body;
+    const { id, name, neighbourhood, address, imgUrl, voting } = req.body;
 
     if (id) {
       if (req.method === "POST") {
@@ -20,11 +20,11 @@ const createCoffeeStores = async (req, res) => {
               {
                 fields: {
                   id,
-                  neighbourhood,
+                  name,
                   address,
+                  neighbourhood,
                   voting,
                   imgUrl,
-                  name,
                 },
               },
             ]);

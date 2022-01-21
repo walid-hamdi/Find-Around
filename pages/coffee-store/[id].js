@@ -26,7 +26,7 @@ function CoffeeStore(initialProps) {
 
   const handleCreateStores = async (coffee) => {
     try {
-      const { fsq_id, name, address, neighborhood, imgUrl } = coffee;
+      const { id, name, imgUrl, neighbourhood, address } = coffee;
 
       const response = await fetch("/api/createCoffeeStores", {
         method: "POST",
@@ -34,12 +34,12 @@ function CoffeeStore(initialProps) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          id: fsq_id,
+          id,
           name,
-          address: address || "",
-          neighborhood: neighborhood || "",
-          imageUrl: imgUrl,
           voting: 0,
+          imgUrl,
+          neighbourhood: neighbourhood || "",
+          address: address || "",
         }),
       });
 
@@ -51,7 +51,7 @@ function CoffeeStore(initialProps) {
     if (isEmpty(initialProps.coffeeStore)) {
       if (coffeeStoresContext.length > 0) {
         const findCoffeeFromContext = coffeeStoresContext.find((coffee) => {
-          return coffee.fsq_id.toString() === id;
+          return coffee.id.toString() === id;
         });
 
         if (findCoffeeFromContext) {
@@ -64,7 +64,7 @@ function CoffeeStore(initialProps) {
     }
   }, [id, initialProps, initialProps.coffeeStore]);
 
-  const { name, imgUrl, location, address, neighborhood } = coffeeStore;
+  const { address, name, imgUrl } = coffeeStore;
 
   const [voting, setVoting] = useState(0);
 
@@ -107,7 +107,7 @@ function CoffeeStore(initialProps) {
   return (
     <>
       <Head>
-        <title>{name && name}</title>
+        <title>{name}</title>
       </Head>
 
       <div className={styles.container}>
@@ -129,7 +129,7 @@ function CoffeeStore(initialProps) {
         </div>
         <div className={styles.itemWrapper}>
           <div className={cs([styles.itemWrapperCard, "glass"])}>
-            <h1 className={styles.mainTitle}>{name && name}</h1>
+            <h1 className={styles.mainTitle}>{name}</h1>
             <div className={styles.imgWrapper}>
               <Image
                 src={
@@ -142,10 +142,22 @@ function CoffeeStore(initialProps) {
             </div>
           </div>
           <div className={cs([styles.content, "glass"])}>
-            <h1>{location && location.address}</h1>
-            <h1>{address && address}</h1>
+            <h1 className={styles.addressText}>
+              <span className={styles.addressIconWrapper}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="48px"
+                  viewBox="0 0 24 24"
+                  width="48px"
+                  fill="#ffff"
+                >
+                  <path d="M0 0h24v24H0V0z" fill="none" />
+                  <path d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+                </svg>
+              </span>
+              <span>{address}</span>
+            </h1>
 
-            <h1>{neighborhood && neighborhood}</h1>
             <div className={styles.voteWrapper}>
               <p className={styles.voteText}>{voting}</p>
             </div>
@@ -166,7 +178,7 @@ export async function getStaticProps({ params }) {
   const coffeeStoreData = await fetchCoffeeStores();
 
   const coffeeStoreById = coffeeStoreData.find(
-    (coffee) => coffee.fsq_id.toString() === params.id
+    (coffee) => coffee.id.toString() === params.id
   );
 
   return {
@@ -182,7 +194,7 @@ export async function getStaticPaths() {
   const paths = coffeeStoreData.map((coffee) => {
     return {
       params: {
-        id: coffee.fsq_id.toString(),
+        id: coffee.id.toString(),
       },
     };
   });

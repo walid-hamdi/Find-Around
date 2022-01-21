@@ -51,14 +51,14 @@ export default function Home({ coffeeStore }) {
             nearBy.map((coffee) => {
               return (
                 <Card
-                  key={coffee.fsq_id}
+                  key={coffee.id}
                   className={styles.card}
                   heading={coffee.name}
                   imageUrl={
                     coffee.imgUrl ||
                     "https://images.unsplash.com/photo-1640020580603-e7beafd75d94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"
                   }
-                  href={`/coffee-store/${coffee.fsq_id}`}
+                  href={`/coffee-store/${coffee.id}`}
                 />
               );
             })}
@@ -72,14 +72,14 @@ export default function Home({ coffeeStore }) {
             stores.map((coffee) => {
               return (
                 <Card
-                  key={coffee.fsq_id}
+                  key={coffee.id}
                   className={styles.card}
                   heading={coffee.name}
                   imageUrl={
                     coffee.imgUrl ||
                     "https://images.unsplash.com/photo-1640020580603-e7beafd75d94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"
                   }
-                  href={`/coffee-store/${coffee.fsq_id}`}
+                  href={`/coffee-store/${coffee.id}`}
                 />
               );
             })}
